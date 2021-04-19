@@ -7,14 +7,16 @@ from .utility import f_check as f
 
 if f().loaded['urls']['tenant'] or c().cached['header'] == None:
     log.error("Cache issue or Tenant is not set in config.json.")
-# AT's Work
+
 def boolize(v):
-    if isinstance(v, str) and v.upper() in ["TRUE", "FALSE"]:
-        return v.upper() == "TRUE"
-    return v
+    return {
+        "TRUE": True,
+        "FALSE": False,
+    }.get(v.upper() if hasattr(v,"upper") else "", v)
+
 def sanitizedict(d):
-    return dict([(k,boolize(v)) for k,v in d.items() if v != ""])
-# AT's Work
+    return {k:boolize(v) for k,v in d.items() if v!= ""}
+
 #RedRock Query
 class query_request:
     def __init__(self, sql, Debug=False):
@@ -59,3 +61,4 @@ class other_requests:
         if Debug == True:
             print(json.dumps(self.parsed_json, indent=4, sort_keys=True))
 #make complicated request so that it trasfers complicated objects. This will allow to arrayed dicts and whatnot
+
