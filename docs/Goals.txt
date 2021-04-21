@@ -1,2 +1,0 @@
-This is to test the DMC auth from Harvey Kwok and/or cache credentials from the rest API 
-

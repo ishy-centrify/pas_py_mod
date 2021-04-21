@@ -1,2 +1,0 @@
-Replace Pandas with pyexcel. Much lighter and produces the same result:
-https://pyexcel.readthedocs.io/en/latest/

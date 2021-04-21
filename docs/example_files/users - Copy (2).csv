@@ -1,3 +1,0 @@
-ParentType,User,DomainID,DatabaseID,Host,Password,Description,IsManaged,SshKeyId,CaseSensitiveCheck,UseWheel
-Domain,a1,bb9700df-f99a-4011-969d-e4c5e8cea81a,,,password1,Test,FALSE,,,FALSE
-Domain,b2,bb9700df-f99a-4011-969d-e4c5e8cea81a,,,password1,,,,,

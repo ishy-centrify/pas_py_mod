@@ -26,13 +26,13 @@ if args.Path != None:
         other_requests(Call='/ServerManage/AddDatabases', Accounts=data, Debug=True)
 
 elif args.List != None:
-    log.info("List of accounts is: {0}".format(args.List))
+    log.info("List of DBs is: {0}".format(args.List))
     other_requests(Call='/ServerManage/AddDatabases', Accounts=args.List, Debug=True)
 
 elif args.JSON != None:
     log.info("JSON file being used.")
     path = os.path.abspath(args.JSON)
-    log.info("Path to the JSON file to add resources is: {0}".format(path))
+    log.info("Path to the JSON file to add DBs is: {0}".format(path))
     with open(path, 'r') as f:
         other_requests(Call='/ServerManage/AddDatabases', Accounts=json.load(f), Debug=True)
 
