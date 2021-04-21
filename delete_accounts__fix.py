@@ -28,19 +28,19 @@ if args.Path != None:
     for i in range (ID_query["Result"]["Count"]):
         qIds = ID_query["Result"]["Results"][i]["Row"]['ID']
         ids = [ids.append(format(qIds))]
-    other_requests(Call="ServerManage/MultiAccountDelete", Debug=True, Ids=ids)
+    other_requests(Call="ServerManage/MultiAccountDelete", Debug=True, ID=ids)
 #####
 #Only fully supported with these options
 if args.List != None:
     log.info("List of accounts is: {0}".format(args.List))
-    other_requests(Call='/ServerManage/MultiAccountDelete', Accounts=args.List, Debug=True)
+    other_requests(Call='/ServerManage/MultiAccountDelete', ID=args.List, Debug=True)
 
 elif args.JSON != None:
     log.info("JSON file being used.")
     path = os.path.abspath(args.JSON)
     log.info("Path to the JSON file to add resources is: {0}".format(path))
     with open(path, 'r') as f:
-        other_requests(Call='/ServerManage/MultiAccountDelete', Accounts=json.load(f), Debug=True)
+        other_requests(Call='/ServerManage/MultiAccountDelete', ID=json.load(f), Debug=True)
         
 else:
     log.error("Need to input an argument.")
